@@ -1,0 +1,19 @@
+{
+  "name": "lesson-1",
+  "version": "1.0.0",
+  "description": "My lesson 1 assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angel-l-t/angel-cse-341.git"
+  },
+  "author": "Angel Lugo Tehuitzil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angel-l-t/angel-cse-341/issues"
+  },
+  "homepage": "https://github.com/angel-l-t/angel-cse-341#readme"
+}
