@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/angel-l-t/angel-cse-341/issues"
   },
-  "homepage": "https://github.com/angel-l-t/angel-cse-341#readme"
+  "homepage": "https://github.com/angel-l-t/angel-cse-341#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

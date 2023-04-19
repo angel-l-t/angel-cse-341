@@ -1,14 +1,24 @@
-const http = require('http');
+// Importing express module
+const express = require('express');
 
-const hostname = '127.0.0.1';
-const port = process.env.PORT || 3000;
+// Creating app instance from express
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Alan Daniel');
-});
+// Setting port variable
+app.set("port", process.env.PORT || 3000);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// Bringing getData function to root
+app.get("/", getData);
+
+// function to send data to browser
+function getData(req, res) {
+  // log to console to know if it works
+  console.log('getting data');
+
+  // Writing data to response, and calling end point
+  res.write('{"Name":"Alan"}');
+  res.end();
+}
+
+// App lisneting to browser
+app.listen(app.get("port"), () => console.log(`Server is listening on port ${app.get("port")}`));
