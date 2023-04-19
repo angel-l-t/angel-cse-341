@@ -16,7 +16,7 @@ function getData(req, res) {
   console.log('getting data');
 
   // Writing data to response, and calling end point
-  res.write('{"Name":"Alan"}');
+  res.write('Alan Daniel');
   res.end();
 }
 
