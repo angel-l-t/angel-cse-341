@@ -1,24 +1,28 @@
-// Importing express module
+// Importing modules
 const express = require('express');
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+// Modules in my project
+const mongodb = require('./db/connect');
+const routes = require('./routes');
 
-// Creating app instance from express
+// Creating express app
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Setting port variable
-app.set("port", process.env.PORT || 3000);
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', routes);
 
-// Bringing getData function to root
-app.get("/", getData);
-
-// function to send data to browser
-function getData(req, res) {
-  // log to console to know if it works
-  console.log('getting data');
-
-  // Writing data to response, and calling end point
-  res.write('Alan Daniel');
-  res.end();
-}
-
-// App lisneting to browser
-app.listen(app.get("port"), () => console.log(`Server is listening on port ${app.get("port")}`));
+mongodb.initDb((err, mongodb) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log(`Connected to DB and listening on ${port}`);
+  }
+});
