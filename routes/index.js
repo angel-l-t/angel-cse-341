@@ -1,6 +1,6 @@
-const routes = require('express').Router();
+const routes = require("express").Router();
 
 // Using routes in contacts.js
-routes.use('/contacts', require('./contacts'))
+routes.use("/contacts", require("./contacts"));
 
 module.exports = routes;
