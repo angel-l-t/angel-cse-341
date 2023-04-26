@@ -26,7 +26,67 @@ const oneContactRoute = async (req, res, next) => {
   });
 };
 
+// This function creates a new contact
+const createContact = async (req, res, next) => {
+  mongodb
+    .getDb()
+    .db()
+    .collection("contacts")
+    .insertOne(req.body)
+    .then((newContact) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(201).json(newContact.insertedId); // Returning ID of new contact.
+    })
+    .catch((error) => console.log(error));
+};
+
+// This function updates a contact
+const updateContact = async (req, res, next) => {
+  const userId = new ObjectId(req.params.id);
+
+  mongodb
+    .getDb()
+    .db()
+    .collection("contacts")
+    .findOneAndUpdate(
+      { _id: userId },
+      {
+        $set: {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          email: req.body.email,
+          favoriteColor: req.body.favoriteColor,
+          birthDay: req.body.birthDay,
+        },
+      }
+    )
+    .then((updateResponse) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(204).json(updateResponse); // Returning status
+    })
+    .catch((error) => console.log(error));
+};
+
+// This function deletes a contact
+const deleteContact = async (req, res, next) => {
+  const userId = new ObjectId(req.params.id);
+
+  mongodb
+    .getDb()
+    .db()
+    .collection("contacts")
+    .deleteOne({ _id: userId })
+    .then((deleteResponse) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(deleteResponse.deletedCount); // Returning status
+    })
+    .catch((error) => console.log(error));
+};
+
 module.exports = {
   allContactsRoute,
   oneContactRoute,
+  createContact,
+  updateContact,
+  deleteContact,
 };

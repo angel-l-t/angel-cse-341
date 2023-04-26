@@ -1,0 +1,59 @@
+### LOCAL TEST ----------------------------------
+
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName" : "Dylan",
+    "lastName" : "Ayon",
+    "email" : "dayon@email.com",
+    "favoriteColor" : "Rojo, Azul",
+    "birthDay" : "November 18th"
+}
+
+###
+
+PUT http://localhost:3000/contacts/644428f682f5939072d71b01 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName" : "Angel",
+    "lastName" : "Lugo",
+    "email" : "angelo@email.com",
+    "favoriteColor" : "Green",
+    "birthDay" : "July 30th"
+}
+
+###
+
+DELETE http://localhost:3000/contacts/644891e18ece23068117f135 HTTP/1.1
+
+### RENDER TEST ----------------------------------
+
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName" : "Dylan",
+    "lastName" : "Ayon",
+    "email" : "dayon@email.com",
+    "favoriteColor" : "Rojo, Azul",
+    "birthDay" : "November 18th"
+}
+
+###
+
+PUT http://localhost:3000/contacts/644428f682f5939072d71b01 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName" : "Angel",
+    "lastName" : "Lugo",
+    "email" : "angelo@email.com",
+    "favoriteColor" : "Green",
+    "birthDay" : "July 30th"
+}
+
+###
+
+DELETE http://localhost:3000/contacts/644891e18ece23068117f135 HTTP/1.1
