@@ -30,7 +30,7 @@ DELETE http://localhost:3000/contacts/644891e18ece23068117f135 HTTP/1.1
 
 ### RENDER TEST ----------------------------------
 
-POST http://localhost:3000/contacts HTTP/1.1
+POST https://lesson-1-cse341-angel.onrender.com/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -43,7 +43,7 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:3000/contacts/644428f682f5939072d71b01 HTTP/1.1
+PUT https://lesson-1-cse341-angel.onrender.com/contacts/644428f682f5939072d71b01 HTTP/1.1
 content-type: application/json
 
 {
@@ -56,4 +56,4 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/contacts/644891e18ece23068117f135 HTTP/1.1
+DELETE https://lesson-1-cse341-angel.onrender.com/contacts/644891e18ece23068117f135 HTTP/1.1
