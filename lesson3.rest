@@ -8,25 +8,25 @@ content-type: application/json
     "lastName" : "Ayon",
     "email" : "dayon@email.com",
     "favoriteColor" : "Rojo, Azul",
-    "birthDay" : "November 18th"
+    "birthday" : "November 18th"
 }
 
 ###
 
-PUT http://localhost:3000/contacts/644428f682f5939072d71b01 HTTP/1.1
+PUT http://localhost:3000/contacts/644c3f2f9eff72c365752397 HTTP/1.1
 content-type: application/json
 
 {
     "firstName" : "Angel",
     "lastName" : "Lugo",
     "email" : "angelo@email.com",
-    "favoriteColor" : "Green",
-    "birthDay" : "July 30th"
+    "favoriteColor" : "Yellow",
+    "birthday" : "July 30th"
 }
 
 ###
 
-DELETE http://localhost:3000/contacts/6449c041bedc2f4732ff42c1 HTTP/1.1
+DELETE http://localhost:3000/contacts/644c3e4e0c3d382125a21b50 HTTP/1.1
 
 ### RENDER TEST ----------------------------------
 
@@ -38,12 +38,12 @@ content-type: application/json
     "lastName" : "Ayon",
     "email" : "dayon@email.com",
     "favoriteColor" : "Rojo, Azul",
-    "birthDay" : "November 18th"
+    "birthday" : "November 18th"
 }
 
 ###
 
-PUT https://lesson-1-cse341-angel.onrender.com/contacts/644428f682f5939072d71b01 HTTP/1.1
+PUT https://lesson-1-cse341-angel.onrender.com/contacts/644c3f2f9eff72c365752397 HTTP/1.1
 content-type: application/json
 
 {
@@ -51,9 +51,9 @@ content-type: application/json
     "lastName" : "Lugo",
     "email" : "angelo@email.com",
     "favoriteColor" : "Green",
-    "birthDay" : "July 30th"
+    "birthday" : "July 30th"
 }
 
 ###
 
-DELETE https://lesson-1-cse341-angel.onrender.com/contacts/6449c06b1c0e285c8333ebbd HTTP/1.1
+DELETE https://lesson-1-cse341-angel.onrender.com/contacts/6444291082f5939072d71b02 HTTP/1.1
