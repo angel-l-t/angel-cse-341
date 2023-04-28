@@ -26,7 +26,7 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3000/contacts/644891e18ece23068117f135 HTTP/1.1
+DELETE http://localhost:3000/contacts/6449c041bedc2f4732ff42c1 HTTP/1.1
 
 ### RENDER TEST ----------------------------------
 
@@ -56,4 +56,4 @@ content-type: application/json
 
 ###
 
-DELETE https://lesson-1-cse341-angel.onrender.com/contacts/644891e18ece23068117f135 HTTP/1.1
+DELETE https://lesson-1-cse341-angel.onrender.com/contacts/6449c06b1c0e285c8333ebbd HTTP/1.1
