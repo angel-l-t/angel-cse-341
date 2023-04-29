@@ -104,8 +104,9 @@ const deleteContact = async (req, res, next) => {
       .collection("contacts")
       .findOneAndDelete({ _id: userId });
 
-    if (response.deletedCount > 0) {
+    if (response) {
       res.status(200).send();
+      res.json(response);
     } else {
       res
         .status(500)
