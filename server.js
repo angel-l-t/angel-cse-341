@@ -13,10 +13,6 @@ const port = process.env.PORT || 3000;
 
 app
   .use(bodyParser.json())
-  .use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    next();
-  })
   .use(cors()) // Right now it allows acces to all domains
   .use("/", routes);
 

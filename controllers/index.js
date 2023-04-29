@@ -106,7 +106,6 @@ const deleteContact = async (req, res, next) => {
 
     if (response) {
       res.status(200).send();
-      res.json(response);
     } else {
       res
         .status(500)
