@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://lesson-1-cse341-angel.onrender.com",
+  "host": "lesson-1-cse341-angel.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
