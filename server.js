@@ -17,7 +17,7 @@ app
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
   })
-  .use(cors())
+  .use(cors()) // Right now it allows acces to all domains
   .use("/", routes);
 
 mongodb.initDb((err, mongodb) => {
