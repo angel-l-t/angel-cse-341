@@ -14,6 +14,7 @@ const port = process.env.PORT || 3000;
 app
   .options("*", cors())
   .use(bodyParser.json())
+  .use(cors())
   .use("/", routes);
 
 mongodb.initDb((err, mongodb) => {
