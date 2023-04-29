@@ -75,22 +75,18 @@ const updateContact = async (req, res, next) => {
       lastName: req.body.lastName,
       email: req.body.email,
       favoriteColor: req.body.favoriteColor,
-      birthday: req.body.birthday,
+      birthday: req.body.birthday
     };
     const response = await mongodb
       .getDb()
       .db()
-      .collection("contacts")
+      .collection('contacts')
       .replaceOne({ _id: userId }, contact);
-
+    
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
-      res
-        .status(500)
-        .json(
-          response.error || "Some error occurred while updating the contact."
-        );
+      res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -106,7 +102,7 @@ const deleteContact = async (req, res, next) => {
       .getDb()
       .db()
       .collection("contacts")
-      .remove({ _id: userId }, true);
+      .findOneAndDelete({ _id: userId });
 
     if (response.deletedCount > 0) {
       res.status(200).send();
